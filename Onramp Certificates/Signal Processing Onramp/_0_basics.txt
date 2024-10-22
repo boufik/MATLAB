@@ -1,0 +1,11 @@
+Preprocessing in signals:
+
+1) Scale the y-axis. In this example, there were 3 seismic signals and their height was recorded in nm. We wanted to display their height in cm, so the first step was to divide by 1e7. Preproceess function is a custom one ('Add custom function' button)
+
+2) Secondly, the 2 first signals had fs = 50 Hz, while the 3rd signal had fs = 100 Hz. So, we had to downsample the 3rd signal in order to have the same value for fs with the other 2 signals. This is called resampling.
+
+3) Now, that the 3 signals are measured in centimeters and have the same fs = 50 Hz, we can focus in a Region Of Interest (ROI). By checking the right box in App, we can focus in a specific area, for example in the mid 15 minutes of the 3 seismic signals.
+
+4) Next step is to align the 3 signals, so that we can compare them more easily. This happens, because the 3 recorded signals were not received at the exact same time by the 3 seismic receiver stations, because of the wave delay. First, we find out the lastly-arrived signal with the 'finddelay' function and then we use the 'alignsignals' function to align them. 
+
+**** They are now measured in cms, have fs = 50 Hz, focused in a specific area and aligned appropriately. ****
